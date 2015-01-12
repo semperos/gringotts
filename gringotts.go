@@ -47,7 +47,7 @@ func DownloadFile(url string, localFile string) (string, error) {
 func DownloadFileOrFail(url string, localFile string) string {
 	ret, err := DownloadFile(url, localFile)
 	if err != nil {
-		log.Fatalf("Failed to download %s to %s", url, localFile)
+		log.Fatalf("Failed to download '%s' to '%s' with error: %v\n", url, localFile, err)
 	}
 	return ret
 }
